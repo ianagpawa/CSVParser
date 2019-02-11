@@ -1,6 +1,6 @@
 # CSV Parser
 ### By Ian Agpawa
-##### This is a script for copying lines from a csv file.
+##### This is a script for copying lines from a csv file, removing first position comment, and creating into separate subfiles.
 
 
 ### Quick Start
@@ -9,7 +9,7 @@
 ### Running the app
 Execute the following command while in the project folder:
 ```
-$   python transformCSV.py
+$   python CSVParser.py ${INPUT_FILE_NAME}
 ```
 
 

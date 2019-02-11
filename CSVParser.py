@@ -18,7 +18,6 @@ def write_section(rows, output_file_name):
             row_writer.writerow(row)
 
         
-
 def get_tups():
     pos = {
         'u': 6,
@@ -33,12 +32,12 @@ def get_tups():
 
 
 def read_write(file_name):
-    output_file_names = ['u', 's', 'r', 'e', 'm', 'c']
     output_arr = read(file_name)
-    count = 0
+    count = 1
     for tup in get_tups():
         rows = output_arr[tup[0]:tup[1]]
-        write_section(rows, output_file_names[count]+".csv")
+        write_section(rows, "%s.csv" % count)
         count += 1
+
 
 read_write(sys.argv[1])
