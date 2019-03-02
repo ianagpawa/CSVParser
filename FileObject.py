@@ -68,5 +68,15 @@ class FileObject:
         file = open(file_name, "r")
         return file.read().splitlines()
 
+
     def get_file_name(self, index):
+        """
+        Gets file name from file object
+        
+        @type index: number
+        @param index: Index of file.
+
+        @rtype: string
+        @return File name.
+        """
         return self.file_object["sections"][index]["name"]
