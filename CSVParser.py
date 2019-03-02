@@ -76,12 +76,40 @@ class CSVParser:
 
 
     def insert_value_into_row(self, row, value, column_index):
+        """
+        Inserts value into row of csv arr property.
+        
+        @type row: arr
+        @param row: String representation of row.
+
+        @type value: string
+        @param value: Value to be inserted into row.
+
+        @type column_index: number
+        @param column_index: Column index of where value should be inserted into row.
+
+        @rtype: array
+        @return Array of row values.
+        """
         row[column_index] = value
         return row
 
 
-    def insert_values(self, column_index, cut_off_index, add_list_file):
-        text_file_arr = self.parse_text_file(add_list_file)
+    def insert_values(self, column_index, cut_off_index, add_list_file_name):
+        """
+        Inserts value into csv rows.
+
+        @type column_index: number
+        @param column_index: Column index of where value should be inserted into row.
+
+        @type cut_off_index: number
+        @param cut_off_index: Column index of where value should be inserted into row.
+        
+        @type add_list_file_name: string
+        @param add_list_file_name: File name of values to be added.
+
+        """
+        text_file_arr = self.parse_text_file(add_list_file_name)
         row_count = 0
         ind = 0
         for row in self.get_parsed_csv_file():
