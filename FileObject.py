@@ -3,8 +3,9 @@ import json
 class FileObject:
     """
     Create File Object
-    
     """
+
+
     def __init__(self, json_file_name):
         """
         Initializes File Object constructor
@@ -44,7 +45,7 @@ class FileObject:
         Gets tuples for each section by lines.
         
         @rtype: array
-        @return Array of tuples
+        @return Array of tuples for each section.
         """
         sections = self.file_object["sections"]
         tuples = []
@@ -52,3 +53,20 @@ class FileObject:
             tuple_set = (0, sections[index]["position"]) if index == 0 else (sections[index-1]["position"], sections[index]["position"])
             tuples.append(tuple_set)
         return tuples
+
+
+    def parse_text_file(self, file_name):
+        """
+        Parses text file into array of line items.
+        
+        @type file_name: str
+        @param file_name: Name of text file.
+
+        @rtype: array
+        @return Array of line times.
+        """
+        file = open(file_name, "r")
+        return file.read().splitlines()
+
+    def get_file_name(self, index):
+        return self.file_object["sections"][index]["name"]

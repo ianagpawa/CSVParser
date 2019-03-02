@@ -2,6 +2,7 @@ import csv
 import sys
 
 from FileObject import FileObject
+from CSVParser import CSVParser
 
 def read(file_name):
     output_array = []
@@ -60,5 +61,19 @@ def parse_text_file(file_name):
 
 # print(parse_text_file(sys.argv[1]))
 
-f = FileObject('file_obj.json')
-f.get_tuples()
+# f = FileObject('file_obj.json')
+# f.get_tuples()
+
+
+def read_write(csv_file_name, json_file_name):
+    csv_parser = CSVParser(csv_file_name)
+    file_object = FileObject(json_file_name)
+    for index in range(len(file_object.get_tuples())):
+        tup = file_object.get_tuples()[index]
+        rows = csv_parser.get_parsed_csv_file()[tup[0]:tup[1]]
+        csv_parser.write_csv_section(rows, "./output/%s-%s.csv" % (index, file_object.get_file_name(index)))
+        # csv_parser.set_rows(rows)
+        # # self.write_section(rows, "%s.csv" % count)
+        # print(rows)
+
+read_write("test.csv", "file_obj.json")
