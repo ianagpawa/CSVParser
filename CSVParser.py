@@ -39,24 +39,24 @@ class CSVParser:
         Gets file object property
         
         @rtype: object
-
         @returns file object property
         """
         return self.parsed_csv_file_arr
 
 
     def write_csv_section(self, rows, output_file_name):
+        """
+        Writes csv sections
+
+        @type array
+        @param rows:
+
+        @type str
+        @param output_file_name: Destination of output file.
+        
+        """
         with open(output_file_name, mode='w', newline='') as file:
             row_writer = csv.writer(file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             for row in rows:
                 row_writer.writerow(row)
-
-
-    def set_rows(self, rows):
-        self.rows = rows
-
-
-
-
-
     
