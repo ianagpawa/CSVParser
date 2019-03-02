@@ -55,20 +55,6 @@ class FileObject:
         return tuples
 
 
-    def parse_text_file(self, file_name):
-        """
-        Parses text file into array of line items.
-        
-        @type file_name: str
-        @param file_name: Name of text file.
-
-        @rtype: array
-        @return Array of line times.
-        """
-        file = open(file_name, "r")
-        return file.read().splitlines()
-
-
     def get_file_name(self, index):
         """
         Gets file name from file object
@@ -80,3 +66,7 @@ class FileObject:
         @return File name.
         """
         return self.file_object["sections"][index]["name"]
+
+
+    def get_cutoff_index(self):
+        return self.file_object["sections"][1]["position"]

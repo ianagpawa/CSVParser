@@ -6,8 +6,8 @@ def execute():
     if sys.argv[3] == "base":
         utils.create_base_files()
         return
-    if sys.argv[3] == "action":
-        utils.create_action_files()
+    if  '.txt' in sys.argv[3]:
+        utils.update_action_files(sys.argv[3])
         return
 
 

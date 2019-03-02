@@ -47,3 +47,8 @@ class Utils:
         """
         for index in range(2,len(self.file_object.get_tuples())):
             self.write_file(index)
+
+
+    def update_action_files(self, file_name):
+        self.csv_parser.insert_values(1, self.file_object.get_cutoff_index(), file_name)
+        self.create_action_files()
