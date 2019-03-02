@@ -1,6 +1,8 @@
 import csv 
 import sys
 
+from FileObject import FileObject
+
 def read(file_name):
     output_array = []
     with open(file_name) as csv_file:
@@ -40,4 +42,20 @@ def read_write(file_name):
         count += 1
 
 
-read_write(sys.argv[1])
+# read_write(sys.argv[1])
+
+def parse_text_file(file_name):
+    """
+    Parses text file into array of line items.
+    
+    @type file_name: str
+    @param file_name: Name of text file.
+
+    @rtype: array
+    @return Array of line times.
+    """
+    file = open(file_name, "r")
+    return file.read().splitlines()
+
+
+print(parse_text_file(sys.argv[1]))
