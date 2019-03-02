@@ -58,4 +58,7 @@ def parse_text_file(file_name):
     return file.read().splitlines()
 
 
-print(parse_text_file(sys.argv[1]))
+# print(parse_text_file(sys.argv[1]))
+
+f = FileObject('file_obj.json')
+f.get_tuples()
