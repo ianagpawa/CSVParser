@@ -6,7 +6,7 @@ class CSVParser:
     """
     def __init__(self, csv_file):
         """
-        Initializes CSV Parser constructor
+        Initializes CSV Parser
 
         @type csv_file: str
         @param csv_file: Name of json file.
