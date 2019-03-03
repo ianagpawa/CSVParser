@@ -6,6 +6,12 @@
 ### Quick Start
 -Clone the repo: `git clone https://github.com/ianagpawa/csvParser.git`
 
+### Dependencies
+This application requires 
+```
+Python 3.7.0
+```
+
 ### Running the app
 Execute the following command while in the project folder:
 ```
