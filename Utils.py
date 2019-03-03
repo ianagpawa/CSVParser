@@ -49,6 +49,9 @@ class Utils:
             self.write_file(index)
 
 
-    def update_action_files(self, file_name):
+    def create_updated_action_files(self, file_name):
+        """
+        Creates actions files with values inserted.  
+        """
         self.csv_parser.insert_values(1, self.file_object.get_cutoff_index(), file_name)
         self.create_action_files()

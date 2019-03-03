@@ -69,4 +69,10 @@ class FileObject:
 
 
     def get_cutoff_index(self):
+        """
+        Gets cut off index in csv parser separating base from action rows.
+        
+        @rtype: number
+        @return Cutoff index in csv parser.
+        """
         return self.file_object["sections"][1]["position"]
